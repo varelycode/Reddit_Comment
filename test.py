@@ -1,8 +1,8 @@
 import praw
 import csv
-
+import os
 from praw.models import MoreComments
-reddit = praw.Reddit(client_id = 'xeG15Qt8cVfkaA' , client_secret= 'xLdWCwi3aunLoCvzXEPKvEdPj1U' , username = 'testreddit0', password = 'TestTest676' , user_agent = 'reddit_test')
+reddit = praw.Reddit(client_id = os.environ["CLIENT_ID"], client_secret= os.environ["CLIENT_SECRET"] , username = os.environ["USERNAME"], password = os.environ["PASSWORD"] , user_agent = os.environ["USER_AGENT"])
 
 subreddit = reddit.subreddit('python')
 hot_python = subreddit.hot(limit=5)
